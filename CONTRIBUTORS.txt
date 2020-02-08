@@ -1,0 +1,20 @@
+CONTRIBUTORS   (in alphabetical order)
+============
+
+Contributions directly into this repository:
+
+* Mareta Dagostino
+
+Indirect contributions by import of code or artwork,
+as far as known and not mentioned in their own license texts:
+
+* Noah Beard
+* StumpyStrust
+* TwistedTwigleg
+
+Code or artwork from individual named persons may no longer be
+included in the latest software version in this repository.
+Many thanks to all other unknown community members who published
+ideas or code fragments in the web which found the way into this
+repository.
+

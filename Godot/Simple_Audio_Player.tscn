@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="AudioStreamSample" id=1]
+
+[node name="Simple_Audio_Player" type="Spatial"]
+
+[node name="Audio_Stream_Player" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 1 )
+volume_db = -4.0

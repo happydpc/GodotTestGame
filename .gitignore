@@ -1,0 +1,6 @@
+# Godot auto generated files
+Godot/**/*.import
+
+# temporary files created in gaming session
+Godot/assets/*_001.material
+
