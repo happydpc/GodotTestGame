@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://assets/Colors.material" type="Material" id=1]
 [ext_resource path="res://assets/Emission.material" type="Material" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://assets/32-32_white.png" type="Texture" id=7]
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Player.gd" type="Script" id=9]
+[ext_resource path="res://AnimationPlayer_Manager.gd" type="Script" id=10]
+[ext_resource path="res://Weapon_Rifle.gd" type="Script" id=11]
+[ext_resource path="res://Weapon_Knife.gd" type="Script" id=12]
+[ext_resource path="res://Weapon_Pistol.gd" type="Script" id=13]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 1.2
@@ -4099,6 +4103,7 @@ anims/Rifle_fire = SubResource( 17 )
 anims/Rifle_idle = SubResource( 18 )
 anims/Rifle_reload = SubResource( 19 )
 anims/Rifle_unequip = SubResource( 20 )
+script = ExtResource( 10 )
 
 [node name="Camera" type="Camera" parent="Rotation_Helper"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, -0.307539, -0.0646362 )
@@ -4111,12 +4116,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.3914, 0 )
 
 [node name="Rifle_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 7.04431 )
+script = ExtResource( 11 )
 
 [node name="Ray_Cast" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point"]
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 2.54082 )
+script = ExtResource( 12 )
 
 [node name="Area" type="Area" parent="Rotation_Helper/Gun_Fire_Points/Knife_Point"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.17163, 1.26893 )
@@ -4127,6 +4134,7 @@ shape = SubResource( 21 )
 
 [node name="Pistol_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
+script = ExtResource( 13 )
 
 [node name="Gun_Aim_Point" type="Spatial" parent="Rotation_Helper"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.307539, 20.0487 )
