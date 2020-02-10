@@ -22,22 +22,23 @@ func play_sound(sound_name, position=null):
 		return
 	
 	if sound_name == "pistol_shot":
-		audio_node.set_volume_db(16)
+		# adjust volume, AudioStreamPlayer3D (AudioStreamPlayer: set_volume_db)
+		audio_node.set_unit_db(20)
 		audio_node.stream = audio_pistol_shot
 	elif sound_name == "rifle_shot":
-		audio_node.set_volume_db(-4)
+		audio_node.set_unit_db(3)
 		audio_node.stream = audio_rifle_shot
 	elif sound_name == "gun_cock":
-		audio_node.set_volume_db(16)
+		audio_node.set_unit_db(20)
 		audio_node.stream = audio_gun_cock
 	else:
 		print ("UNKNOWN STREAM")
 		queue_free()
 		return
 
-	# If you are using a AudioPlayer3D, then uncomment these lines to set the position.
-	# if position != null:
-	#       audio_node.global_transform.origin = position
+	# for AudioStreamPlayer3D only
+	if position != null:
+		audio_node.global_transform.origin = position
 
 	audio_node.play()
 
@@ -45,4 +46,3 @@ func play_sound(sound_name, position=null):
 func destroy_self():
 	audio_node.stop()
 	queue_free()
-

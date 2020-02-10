@@ -361,12 +361,14 @@ transform = Transform( -1, 0, 8.74228e-08, 6.69697e-08, 0.642788, 0.766044, -5.6
 
 [node name="Health_Pickup" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0198, 2.68939, 21.5176 )
+kit_size = 1
 
 [node name="Health_Pickup_Small" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6413, 2.68939, 21.5176 )
 
 [node name="Ammo_Pickup" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7308, 3, 24.4157 )
+kit_size = 1
 
 [node name="Ammo_Pickup_Small" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2338, 3, 24.4157 )

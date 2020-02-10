@@ -33,7 +33,7 @@ func fire_weapon():
 			body.bullet_hit(DAMAGE, ray.global_transform)
 	
 	ammo_in_weapon -= 1
-	player_node.create_sound("rifle_shot", ray.global_transform)
+	player_node.create_sound("rifle_shot", ray.global_transform.origin)
 
 func equip_weapon():
 	if player_node.animation_manager.current_state == IDLE_ANIM_NAME:
