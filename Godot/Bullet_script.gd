@@ -28,3 +28,4 @@ func collided(body):
 
 	hit_something = true
 	queue_free()
+

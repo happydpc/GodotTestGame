@@ -115,3 +115,4 @@ func animation_callback():
 		print ("AnimationPlayer_Manager.gd -- WARNING: No callback function for the animation to call!")
 	else:
 		callback_function.call_func()
+
