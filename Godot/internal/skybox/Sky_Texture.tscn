@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://internal/skybox/Sky_Texture.gd" type="Script" id=1]
+[ext_resource path="res://internal/skybox/Sky_Render.tscn" type="PackedScene" id=2]
+[ext_resource path="res://internal/skybox/Night_Stars.png" type="Texture" id=3]
+
+[node name="Sky_Texture" type="Viewport"]
+size = Vector2( 2048, 1024 )
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 1
+script = ExtResource( 1 )
+night_sky = ExtResource( 3 )
+
+[node name="Sky" parent="." instance=ExtResource( 2 )]

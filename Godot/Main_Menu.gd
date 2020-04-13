@@ -5,7 +5,6 @@ extends Control
 #		This is because it does not really relate to making a FPS.
 
 var start_menu
-var level_select_menu
 var options_menu
 
 export (String, FILE) var testing_area_scene
@@ -13,7 +12,6 @@ export (String, FILE) var testing_area_scene
 
 func _ready():
 	start_menu = $Start_Menu
-	level_select_menu = $Level_Select_Menu
 	options_menu = $Options_Menu
 	
 	# Connect all of the start menu buttons
@@ -21,11 +19,7 @@ func _ready():
 	_err = $Start_Menu/Button_Open_Godot.connect("pressed", self, "start_menu_button_pressed", ["open_godot"])
 	_err = $Start_Menu/Button_Options.connect("pressed", self, "start_menu_button_pressed", ["options"])
 	_err = $Start_Menu/Button_Quit.connect("pressed", self, "start_menu_button_pressed", ["quit"])
-	
-	# Connect all of the level select menu buttons
-	_err = $Level_Select_Menu/Button_Back.connect("pressed", self, "level_select_menu_button_pressed", ["back"])
-	_err = $Level_Select_Menu/Button_Level_Testing_Area.connect("pressed", self, "level_select_menu_button_pressed", ["testing_scene"])
-	
+		
 	# Connect all of the options menu buttons
 	_err = $Options_Menu/Button_Back.connect("pressed", self, "options_menu_button_pressed", ["back"])
 	_err = $Options_Menu/Button_Fullscreen.connect("pressed", self, "options_menu_button_pressed", ["fullscreen"])
@@ -44,8 +38,8 @@ func _ready():
 
 func start_menu_button_pressed(button_name):
 	if button_name == "start":
-		level_select_menu.visible = true
-		start_menu.visible = false
+		set_mouse_sensitivity()
+		get_node("/root/Globals").load_new_scene(testing_area_scene)
 	elif button_name == "open_godot":
 		var _err = OS.shell_open("https://godotengine.org/")
 	elif button_name == "options":
@@ -53,15 +47,6 @@ func start_menu_button_pressed(button_name):
 		start_menu.visible = false
 	elif button_name == "quit":
 		get_tree().quit()
-
-
-func level_select_menu_button_pressed(button_name):
-	if button_name == "back":
-		start_menu.visible = true
-		level_select_menu.visible = false
-	elif button_name == "testing_scene":
-		set_mouse_sensitivity()
-		get_node("/root/Globals").load_new_scene(testing_area_scene)
 
 
 func options_menu_button_pressed(button_name):

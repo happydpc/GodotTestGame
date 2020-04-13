@@ -524,13 +524,13 @@ func process_UI(_delta):
 	# Set the HUD text
 	if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
 		# First line: Health, second line: Grenades
-		UI_status_label.text = "HEALTH: " + str(health) + \
+		UI_status_label.text = "Health: " + str(health) + \
 		"\n" + current_grenade + ": " + str(grenade_amounts[current_grenade])
 	else:
 		var current_weapon = weapons[current_weapon_name]
 		# First line: Health, second line: weapon and ammo, third line: grenades
-		UI_status_label.text = "HEALTH: " + str(health) + \
-		"\nAMMO: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo) + \
+		UI_status_label.text = "Health: " + str(health) + \
+		"\nAmmo: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo) + \
 		"\n" + current_grenade + ": " + str(grenade_amounts[current_grenade])
 
 

@@ -8,6 +8,7 @@ Contributions directly into this repository:
 Indirect contributions by import of code or artwork,
 as far as known and not mentioned in their own license texts:
 
+* Bastiaan Olij
 * Noah Beard
 * StumpyStrust
 * TwistedTwigleg

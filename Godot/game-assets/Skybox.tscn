@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://internal/skybox/Sky_Texture.tscn" type="PackedScene" id=2]
+[ext_resource path="res://internal/skybox/Skybox.gd" type="Script" id=3]
+
+[sub_resource type="PanoramaSky" id=1]
+
+[sub_resource type="Environment" id=2]
+resource_local_to_scene = true
+background_mode = 2
+background_sky = SubResource( 1 )
+tonemap_mode = 2
+ss_reflections_enabled = true
+glow_enabled = true
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+
+[node name="Skybox" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Sky" parent="." instance=ExtResource( 2 )]
+
+[node name="Sun" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9578, 0 )
+shadow_enabled = true
+directional_shadow_max_distance = 200.0
+
+[node name="World" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+[connection signal="sky_updated" from="Sky" to="." method="_on_Sky_texture_sky_updated"]

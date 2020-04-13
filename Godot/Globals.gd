@@ -20,6 +20,8 @@ var debug_display = null
 
 # ------------------------------------
 
+# A Variable to hold the actual time of day
+var Time_Of_Day = 16.0
 
 # A variable to hold all of the respawn points in a level
 var respawn_points = null
@@ -94,11 +96,13 @@ func _process(_delta):
 			popup.get_node("Button_quit").connect("pressed", self, "popup_quit")
 			popup.connect("popup_hide", self, "popup_closed")
 			popup.get_node("Button_resume").connect("pressed", self, "popup_closed")
+			popup.get_node("Time_of_day").connect("value_changed", self, "popup_timechange")
 			
 			# Add it as a child, and make it pop up in the center of the screen
 			canvas_layer.add_child(popup)
 			popup.popup_centered()
-			
+			# Get actual time of day from Skybox
+			popup.get_node("Time_of_day").set_value(Time_Of_Day)			
 			# Make sure the mouse is visible
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			
@@ -114,6 +118,12 @@ func popup_closed():
 	if popup != null:
 		popup.queue_free()
 		popup = null
+
+
+func popup_timechange(new_Time_Of_Day):
+	Time_Of_Day = new_Time_Of_Day
+	get_node("/root").find_node("Skybox", true, false).set("Time_Of_Day", Time_Of_Day)
+
 
 func popup_quit():
 	get_tree().paused = false
