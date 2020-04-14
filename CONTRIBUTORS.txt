@@ -3,19 +3,21 @@ CONTRIBUTORS   (in alphabetical order)
 
 Contributions directly into this repository:
 
-* Mareta Dagostino
+* Michela Mueller "Mareta Dagostino"
 
 Indirect contributions by import of code or artwork,
 as far as known and not mentioned in their own license texts:
 
+* Achim Menzel "AiYori"
 * Bastiaan Olij
+* K. S. Ernest Lee "iFire"
 * Noah Beard
-* StumpyStrust
-* TwistedTwigleg
+* "StumpyStrust"
+* "TwistedTwigleg"
 
-Code or artwork from individual named persons may no longer be
-included in the latest software version in this repository.
+Some of the code or graphics created by persons mentioned here
+may have been removed in the last commits.
 Many thanks to all other unknown community members who published
-ideas or code fragments in the web which found the way into this
+ideas or code snippets on the web which found their way into this
 repository.
 

@@ -46,6 +46,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.90735e-06 )
 [node name="Box" type="Spatial" parent="."]
 
 [node name="Floor_plane" type="MeshInstance" parent="Box"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
@@ -318,8 +319,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2338, 3, 24.4157 )
 kit_size = 1
 
 [node name="Turret_Raycast" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 30, 0.841041, -30 )
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 30, 0.37, -30 )
 use_raycast = true
 
 [node name="Turret_Bullet_Objects" parent="." instance=ExtResource( 6 )]
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -32, 0.841041, -30 )
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -32, 0.37, -30 )
